@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"reflect"
 
-	our "git.loafle.net/overflow/util-go/reflect"
+	lur "github.com/LOAFLE/util-go/reflect"
 )
 
 // SetValueWithJSONStringArray set the value of json string array
@@ -41,7 +41,7 @@ func SetValueWithJSONStringArray(values []string, targets []interface{}) error {
 		case reflect.Ptr:
 			return fmt.Errorf("Type of target[%d] cannot be double ptr, value=%s", indexI, value)
 		default:
-			cv, err := our.ConvertToType(value, reflect.TypeOf(target).Elem())
+			cv, err := lur.ConvertToType(value, reflect.TypeOf(target).Elem())
 			if nil != err {
 				return fmt.Errorf("Type conversion of value[%s] has been failed to %s[%d]", value, reflect.TypeOf(target).Elem().Kind(), indexI)
 			}

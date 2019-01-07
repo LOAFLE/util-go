@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net"
 
-	"git.loafle.net/overflow/util-go/net/converter"
+	"github.com/LOAFLE/util-go/net/converter"
 )
 
 type cidrRangeIPv4 struct {
